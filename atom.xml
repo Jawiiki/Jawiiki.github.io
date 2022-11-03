@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>南墙北岸的博客</title>
+  
+  
+  <link href="https://jawiiki.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://jawiiki.github.io/"/>
+  <updated>2022-11-03T15:08:31.002Z</updated>
+  <id>https://jawiiki.github.io/</id>
+  
+  <author>
+    <name>Jawiiki</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ISCTF-这个密码怎么怪怪的</title>
+    <link href="https://jawiiki.github.io/2022/11/03/ISCTF-%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81%E6%80%8E%E4%B9%88%E6%80%AA%E6%80%AA%E7%9A%84/"/>
+    <id>https://jawiiki.github.io/2022/11/03/ISCTF-%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81%E6%80%8E%E4%B9%88%E6%80%AA%E6%80%AA%E7%9A%84/</id>
+    <published>2022-11-03T15:04:02.000Z</published>
+    <updated>2022-11-03T15:08:31.002Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载附件，txt中有明显的多个&#x3D;，根据文件名提示base解码把&#x3D;号放到文末，利用栅栏密码将文本转换</p><p>JFJUGVCGPNAF6M3BON4VNCTGMRBPU&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p><p>丢入base解码</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81%E6%80%8E%E4%B9%88%E6%80%AA%E6%80%AA%E7%9A%84/image-20221102220601365.png" alt="image-20221102220601365"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;下载附件，txt中有明显的多个&amp;#x3D;，根据文件名提示base解码把&amp;#x3D;号放到文末，利用栅栏密码将文本转换&lt;/p&gt;
+&lt;p&gt;JFJUGVCGPNAF6M3BON4VNCTGMRBPU&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-这是什么古典玩意</title>
+    <link href="https://jawiiki.github.io/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/"/>
+    <id>https://jawiiki.github.io/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/</id>
+    <published>2022-11-03T15:03:48.000Z</published>
+    <updated>2022-11-03T15:08:25.946Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载附件，一个txt和一张图片</p><p>part1，文末明显的&#x3D;&#x3D;结尾，考虑base家族</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102130705328.png" alt="image-20221102130705328"></p><p>part2，两位数一组，考虑16进制</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102130830274.png" alt="image-20221102130830274"></p><p>考虑ascill，再次转码</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102130929480.png" alt="image-20221102130929480"></p><p>part3，一眼丁真，熟悉的猪圈密码</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102131025459.png" alt="image-20221102131025459"></p><p>最后相加</p><p>ISCTF{BlueShark_SeemsS0_cute}</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;下载附件，一个txt和一张图片&lt;/p&gt;
+&lt;p&gt;part1，文末明显的&amp;#x3D;&amp;#x3D;结尾，考虑base家族&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-蓝鲨密码</title>
+    <link href="https://jawiiki.github.io/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/"/>
+    <id>https://jawiiki.github.io/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/</id>
+    <published>2022-11-03T15:03:37.000Z</published>
+    <updated>2022-11-03T15:08:20.193Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载附件，加上后缀.txt打开</p><p>注意到重复出现  ! . ?联想到Ook！解码</p><p>将蓝鲨替换成Ook，放入解码器</p><p><img src="/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/image-20221102215348684.png" alt="image-20221102215348684"></p><p>将明码丢入解码器</p><p><img src="/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/image-20221102215413031.png" alt="image-20221102215413031"></p><p>可见，BLUE和SHARK重复出现，且每组重复次数不一，联想到摩斯电码，分别替换成-.</p><p>丢入解码器</p><p><img src="/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/image-20221102215432864.png" alt="image-20221102215432864"></p><p>获得flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;下载附件，加上后缀.txt打开&lt;/p&gt;
+&lt;p&gt;注意到重复出现  ! . ?联想到Ook！解码&lt;/p&gt;
+&lt;p&gt;将蓝鲨替换成Ook，放入解码器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-磁盘管理大师</title>
+    <link href="https://jawiiki.github.io/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/"/>
+    <id>https://jawiiki.github.io/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/</id>
+    <published>2022-11-03T15:03:17.000Z</published>
+    <updated>2022-11-03T15:08:15.827Z</updated>
+    
+    <content type="html"><![CDATA[<p>解压后<img src="/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/image-20221102220032912.png" alt="image-20221102220032912"></p><p>拖入binwalk分离</p><p><img src="/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/image-20221102220128522.png" alt="image-20221102220128522"></p><p>使用Stegsolve<img src="/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/image-20221102220213850.png" alt="image-20221102220213850"></p><p>出现flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;解压后&lt;img src=&quot;/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/image-20221102220032912.png&quot; alt=&quot;image-20221102220</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迷宫问题</title>
+    <link href="https://jawiiki.github.io/2022/11/02/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/"/>
+    <id>https://jawiiki.github.io/2022/11/02/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/</id>
+    <published>2022-11-02T08:15:03.000Z</published>
+    <updated>2022-11-03T15:09:35.985Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">start</span>(<span class="params">li</span>):</span><br><span class="line">    Start=li[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> Start!=<span class="string">&quot;S&quot;</span>:</span><br><span class="line">        i+=<span class="number">1</span></span><br><span class="line">        Start = li[i][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> [i,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">walk</span>(<span class="params">li,x,y</span>):</span><br><span class="line">    <span class="keyword">if</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;s&quot;</span>,[x+<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;d&quot;</span>,[x,y+<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">if</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;w&quot;</span>,[x-<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;a&quot;</span>,[x,y-<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">mig</span>):</span><br><span class="line">    li=[]</span><br><span class="line">    a=mig</span><br><span class="line">    a=a.replace(<span class="string">&quot;#&quot;</span>,<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    temp=-<span class="number">2</span></span><br><span class="line">    temp1=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> temp1!=-<span class="number">1</span>:</span><br><span class="line">        temp1=a.find(<span class="string">&quot;\n&quot;</span>,temp1+<span class="number">1</span>)</span><br><span class="line">        li.append(a[temp+<span class="number">2</span>:temp1].split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">        temp=temp1</span><br><span class="line">    data=[]</span><br><span class="line">    步骤=<span class="string">&quot;&quot;</span></span><br><span class="line">    data=[start(li)]</span><br><span class="line">    x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">    y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">while</span> li[x][y]!=<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        go=walk(li,data[-<span class="number">1</span>][<span class="number">0</span>],data[-<span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">if</span> go !=<span class="literal">False</span>:</span><br><span class="line">            data.append(go[<span class="number">1</span>])</span><br><span class="line">            步骤+=go[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">            data=data[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">            步骤=步骤[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">        x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">        y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span>(步骤)</span><br></pre></td></tr></table></figure><p>mig&#x3D;<img src="/2022/11/02/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/image-20221102161900469.png" alt="image-20221102161900469"><br>main(mig)</p><hr><p>原理：</p><p>walk函数：在当前的位置向下右上左的顺序走，若没有墙则返回方向(<code>w``s``a``d</code>)以及下一个位置的行列，若出现墙则返回<code>False</code></p><p>main函数：使用一个data变量记录之前走过的位置以及当前位置，若walk返回成功数据，则data变量加入返回的位置;若walk失败，则data&#x3D;data[0,-1]，及返回上一次的位置。</p><p><code>若走到下一次的位置，当前位置需要标记为墙或者其他！否则可以会出现来回走的情况</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas</summary>
+      
+    
+    
+    
+    <category term="脚本" scheme="https://jawiiki.github.io/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+    <category term="迷宫" scheme="https://jawiiki.github.io/tags/%E8%BF%B7%E5%AE%AB/"/>
+    
+    <category term="脚本" scheme="https://jawiiki.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-一个misc手会不懂web吗</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/</id>
+    <published>2022-11-02T07:36:57.000Z</published>
+    <updated>2022-11-02T08:00:19.155Z</updated>
+    
+    <content type="html"><![CDATA[<p>过滤http.request.method&#x3D;&#x3D;POST</p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234545558.png" alt="image-20221027234545558"></p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234553808.png" alt="image-20221027234553808"></p><p>flag在flag和flag1表格中</p><p>导出后写脚本</p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234717736.png" alt="image-20221027234717736"></p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234740859.png" alt="image-20221027234740859"></p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234745166.png" alt="image-20221027234745166"></p><p>得出</p><p>ITCTF{srl<code>!#is</code>vfry&#96;fasy~!!,</p><p>稍微修饰后</p><p>ISCTF{sql_is_very_easy}</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;过滤http.request.method&amp;#x3D;&amp;#x3D;POST&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-小蓝鲨藏哪了呢</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/</id>
+    <published>2022-11-02T07:36:26.000Z</published>
+    <updated>2022-11-02T08:00:14.857Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载文件后，发现是连续解压</p><p><img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183210035.png" alt="image-20221031183210035"></p><p>写脚本</p><p><img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183226289.png" alt="image-20221031183226289"></p><p><img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183251732.png" alt="image-20221031183251732"></p><p>010查看后无关键信息</p><p>用Stegsolve查看有无隐写<img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183354866.png" alt="image-20221031183354866"></p><p>lsb隐写</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;下载文件后，发现是连续解压&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183210035.</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-手残党福音</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/</id>
+    <published>2022-11-02T07:36:01.000Z</published>
+    <updated>2022-11-02T08:00:10.886Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183132146.png" alt="image-20221027183132146"></p><p>发现开始游戏后有save存档</p><p><img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183301615.png" alt="image-20221027183301615"></p><p>到下一关后<img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183322986.png" alt="image-20221027183322986"></p><p>每四个进行替换，发现09，33是关卡记录</p><p>递加修改关卡当修改为47时出现结局关卡<img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183545549.png" alt="image-20221027183545549"></p><p>获取flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183132146.png&quot; alt=&quot;image-20221027183132146&quot;&gt;&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-两层编码</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/</id>
+    <published>2022-11-02T07:35:30.000Z</published>
+    <updated>2022-11-02T08:00:06.354Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003617854.png" alt="image-20221028003617854"></p><p>爆破sha256</p><p>写代码</p><p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003639379.png" alt="image-20221028003639379"></p><p>循环暴力破解</p><p>得出结果<img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003700527.png" alt="image-20221028003700527"></p><p>K3BQ</p><p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003739958.png" alt="image-20221028003739958">判断为base64编码,要求四秒内输入key，写代码</p><p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003801455.png" alt="image-20221028003801455"></p><p>快速获取key后输入，得出flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003617854.png&quot; alt=&quot;image-20221028003617854&quot;&gt;&lt;/p&gt;
+&lt;p&gt;爆破sha</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-坤坤的csgo邀请</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/</id>
+    <published>2022-11-02T07:35:05.000Z</published>
+    <updated>2022-11-02T08:00:01.785Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载软件先查壳<img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205212466.png" alt="image-20221027205212466"></p><p>先用upx静态脱壳工具脱壳</p><p><img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205237890.png" alt="image-20221027205237890"></p><p>脱壳后拖入x64dbg</p><p><img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205319614.png" alt="image-20221027205319614"></p><p>看见你打球像cxk</p><p><img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205345133.png" alt="image-20221027205345133"></p><p>断点后来到该处</p><p>发现关键跳，把它nop掉<img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205404314.png" alt="image-20221027205404314"></p><p>F8走下<img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205548198.png" alt="image-20221027205548198"></p><p>出现flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;下载软件先查壳&lt;img src=&quot;/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205212466.png&quot; alt=&quot;image-202210272052</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-可爱的emoji</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/</id>
+    <published>2022-11-02T07:34:35.000Z</published>
+    <updated>2022-11-02T07:59:57.424Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载附件，压缩包加压需要密码</p><p>根据提示</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031173733076-16672285714621.png" alt="image-20221031173733076"></p><p>判断其爆破类型为掩码爆破，输入掩码KEY?????</p><p>获得解压密码</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031173849894.png" alt="image-20221031173849894"></p><p>压缩包内txt含有一堆emoji表情，数量不多，猜测可能是某种编码，上网搜索到emoji-aes</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031174045396.png" alt="image-20221031174045396"></p><p>发现解码需要一个KEY，联系解压时的KEYIS”AES”，推测这里的KEY应该是AES,初试解码失败，尝试修改Rotation中数字，发现a&#x3D;图案对应变换，逐个尝试，联系提示2中</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031174330738.png" alt="image-20221031174330738"></p><p>发现当输入数字9时，图案变为emoji中第一个图案，得出flag：</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031174457698.png" alt="image-20221031174457698"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;下载附件，压缩包加压需要密码&lt;/p&gt;
+&lt;p&gt;根据提示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031173733076-16672285714621.png</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-开摆re</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/</id>
+    <published>2022-11-02T07:34:00.000Z</published>
+    <updated>2022-11-02T07:59:52.998Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/image-20221027235801147.png" alt="image-20221027235801147"></p><p>读题，就是简单的异或，写代码</p><p><img src="/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/image-20221027235956064.png" alt="image-20221027235956064"></p><p><img src="/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/image-20221028000003592.png" alt="image-20221028000003592"></p><p>结束</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/image-20221027235801147.png&quot; alt=&quot;image-20221027235801147&quot;&gt;&lt;/p&gt;
+&lt;p&gt;读题，就是简单的异或，写代码&lt;/p&gt;
+&lt;p</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-进来被骗！</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/</id>
+    <published>2022-11-02T07:33:07.000Z</published>
+    <updated>2022-11-02T07:59:48.086Z</updated>
+    
+    <content type="html"><![CDATA[<p>解压后是一个ppt，打开是一张图片<img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120029584.png" alt="image-20221102120029584"></p><p>ppt是可以理解成一个压缩包，解压后发现音乐’你被骗了‘</p><p>拖入audacity中，发现奇怪音频</p><p><img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120128466.png" alt="image-20221102120128466"></p><p>类似于拨号音DTMF，网上搜索自动解码工具<img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120243276.png" alt="image-20221102120243276"></p><hr><p>解出一组数据</p><p>125 122 146 124 150 130 234 144 100 164 226 66 210 201 203 45 236</p><p>无法解出，怀疑进制转换，仅出现最大数6，应为七进制</p><p>转为10进制后</p><p>68 65 83 67 84 70 123 81 49 95 118 48 105 99 101 33 125</p><p>转换为ASCII码后<img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120435901.png" alt="image-20221102120435901"></p><p>得出flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;解压后是一个ppt，打开是一张图片&lt;img src=&quot;/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120029584.png&quot; alt=&quot;image-202211</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-酱紫乱</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/</id>
+    <published>2022-11-02T07:32:40.000Z</published>
+    <updated>2022-11-02T07:59:43.866Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101101012662.png" alt="image-20221101101012662"></p><p>打开后，每个文本一个字，写脚本整合</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">2896</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;./%d.txt&quot;</span>%i,encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        a+=f.read()</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;./temp.txt&quot;</span>,<span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(a)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101101056844.png" alt="image-20221101101056844"></p><p>得出一串乱码，拖入CyberChef，base解码</p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101100901462.png" alt="image-20221101100901462"></p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101101140482.png" alt="image-20221101101140482"></p><p>得到一串不知道什么的东西，各种解码都无效，且所要的数据均有出现,如<code>&#123;</code>,<code>&#125;</code></p><p>怀疑是按字出现的频率排序</p><hr><p>统计各数字出现的频率</p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101100917065.png" alt="image-20221101100917065"></p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101100922160.png" alt="image-20221101100922160"></p><p>思路正确，得出flag ISCTF{so_cLut73r}</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101101012662.png&quot; alt=&quot;image-20221101101012662&quot;&gt;&lt;/p&gt;
+&lt;p&gt;打开后，每个文本一个字，写脚</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-简单社工</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/</id>
+    <published>2022-11-02T07:31:37.000Z</published>
+    <updated>2022-11-02T07:59:39.683Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/image-20221031225918237.png" alt="image-20221031225918237"></p><p>下载附件，得到一张png图片和一个flag格式文本。打开图片，明显看出是一个地铁站。仔细观察，发现右下角有“高雄捷运”字样，结合挂着的“小港”站牌，直接打开地图搜索，锁定台湾高雄R红线。</p><p><img src="/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/image-20221031225928219.png" alt="image-20221031225928219"></p><p>继续观察，发现广告牌上反光显示4，5号口在同一方向。在地图上查找后发现只有巨蛋站的分布符合。</p><p>得出地址为台湾省高雄市左营区巨蛋站。按照格式取MD5大写得到flag</p><p><img src="/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/image-20221031225940112.png" alt="image-20221031225940112"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/image-20221031225918237.png&quot; alt=&quot;image-20221031225918237&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下载附件，</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-捕风的魔女</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/</id>
+    <published>2022-11-02T07:31:08.000Z</published>
+    <updated>2022-11-02T07:59:30.736Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载附件得到两张对半开的flag加密文字。</p><p>第一张经过搜索可知是魔女之旅中的文字，根据对照表翻译得到flag前半段：ISCTF{VLIXCBXZDZLSFXRX</p><p><img src="/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/image-20221031230057569.png" alt="image-20221031230057569"></p><p>第二张图片搜索后可知是原神中的字体，根据对照表翻译得出flag后半段:IUBWWZXDFFOXMGJL}</p><p><img src="/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/image-20221031230105896.png" alt="image-20221031230105896"></p><p>两段合并得完整的flag：ISCTF{VLIXCBXZDZLSFXRXIUBWWZXDFFOXMGJL}</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;下载附件得到两张对半开的flag加密文字。&lt;/p&gt;
+&lt;p&gt;第一张经过搜索可知是魔女之旅中的文字，根据对照表翻译得到flag前半段：ISCTF{VLIXCBXZDZLSFXRX&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E6%8D%95%E9%A</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-SigninReverse</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-SigninReverse/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-SigninReverse/</id>
+    <published>2022-11-02T07:30:41.000Z</published>
+    <updated>2022-11-02T07:59:26.488Z</updated>
+    
+    <content type="html"><![CDATA[<p>用ida64打开task.exe</p><p><img src="/2022/11/02/ISCTF-SigninReverse/image-20221027105613833.png" alt="image-20221027105613833"></p><p>选择main函数按TAB得出flag<img src="/2022/11/02/ISCTF-SigninReverse/image-20221027105640874.png" alt="image-20221027105640874"></p><p>爆破完毕</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;用ida64打开task.exe&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-SigninReverse/image-20221027105613833.png&quot; alt=&quot;image-20221027105613833&quot;&gt;&lt;/p&gt;
+&lt;p&gt;选择ma</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-md5</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/</id>
+    <published>2022-11-02T07:30:12.000Z</published>
+    <updated>2022-11-02T07:59:20.444Z</updated>
+    
+    <content type="html"><![CDATA[<p>猜测是栅栏密码</p><p><img src="/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/image-20221027110841871.png" alt="image-20221027110841871"></p><p>写python爆破</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ashlib</span><br><span class="line"><span class="keyword">for</span> a1 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> a2 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">for</span> a3 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">            <span class="keyword">for</span> a4 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                <span class="keyword">for</span> a5 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                    <span class="keyword">for</span> a6 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                        <span class="keyword">for</span> a7 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                            a=<span class="string">&quot;ISCTF&#123;md5_is_11%d%d1%d%d8%d%d%d&#125;&quot;</span>%(a1,a2,a3,a4,a5,a6,a7)</span><br><span class="line">                            <span class="keyword">if</span> hashlib.md5(a.encode(encoding=<span class="string">&#x27;UTF-8&#x27;</span>)).hexdigest() ==<span class="string">&quot;88875458bdd87af5dd2e3c750e534741&quot;</span>:</span><br><span class="line">                                <span class="built_in">print</span>(a)</span><br><span class="line">                                <span class="keyword">break</span></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/image-20221102130932628.png" alt="image-20221102130932628"></p><p>解出flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;猜测是栅栏密码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/image-20221027110841871.png</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-KFC疯狂星期四</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/</id>
+    <published>2022-11-02T07:29:44.000Z</published>
+    <updated>2022-11-02T07:59:16.359Z</updated>
+    
+    <content type="html"><![CDATA[<p>解压后<img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000243962.png" alt="image-20221028000243962"></p><p>查看图片,无异常，但下面感觉显示只有一半<img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000347766.png" alt="image-20221028000347766"></p><p><img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000354799.png" alt="image-20221028000354799"></p><p>修改高度后出现密码YouVme-50</p><p>解压后的照片查看16进制<img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000440330.png" alt="image-20221028000440330"></p><p>末尾出现flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;解压后&lt;img src=&quot;/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000243962.png&quot; alt=&quot;image-20221028000243962</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISCTF-fack web</title>
+    <link href="https://jawiiki.github.io/2022/11/02/ISCTF-fack-web/"/>
+    <id>https://jawiiki.github.io/2022/11/02/ISCTF-fack-web/</id>
+    <published>2022-11-02T07:28:49.000Z</published>
+    <updated>2022-11-02T07:59:12.248Z</updated>
+    
+    <content type="html"><![CDATA[<p>进入网页后自动跳转<img src="/2022/11/02/ISCTF-fack-web/image-20221027112441523.png" alt="image-20221027112441523"></p><p>使用burn抓取第一个页面</p><p><img src="/2022/11/02/ISCTF-fack-web/image-20221027112426607.png" alt="image-20221027112426607"></p><p>发现flag</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;进入网页后自动跳转&lt;img src=&quot;/2022/11/02/ISCTF-fack-web/image-20221027112441523.png&quot; alt=&quot;image-20221027112441523&quot;&gt;&lt;/p&gt;
+&lt;p&gt;使用burn抓取第一个页面&lt;/p&gt;
+&lt;p&gt;&lt;im</summary>
+      
+    
+    
+    
+    <category term="ISCTF" scheme="https://jawiiki.github.io/categories/ISCTF/"/>
+    
+    
+    <category term="CTF" scheme="https://jawiiki.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+</feed>

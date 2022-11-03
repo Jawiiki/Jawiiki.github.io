@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>ISCTF-这个密码怎么怪怪的</title>
+      <link href="/2022/11/03/ISCTF-%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81%E6%80%8E%E4%B9%88%E6%80%AA%E6%80%AA%E7%9A%84/"/>
+      <url>/2022/11/03/ISCTF-%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81%E6%80%8E%E4%B9%88%E6%80%AA%E6%80%AA%E7%9A%84/</url>
+      
+        <content type="html"><![CDATA[<p>下载附件，txt中有明显的多个&#x3D;，根据文件名提示base解码把&#x3D;号放到文末，利用栅栏密码将文本转换</p><p>JFJUGVCGPNAF6M3BON4VNCTGMRBPU&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p><p>丢入base解码</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81%E6%80%8E%E4%B9%88%E6%80%AA%E6%80%AA%E7%9A%84/image-20221102220601365.png" alt="image-20221102220601365"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-这是什么古典玩意</title>
+      <link href="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/"/>
+      <url>/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/</url>
+      
+        <content type="html"><![CDATA[<p>下载附件，一个txt和一张图片</p><p>part1，文末明显的&#x3D;&#x3D;结尾，考虑base家族</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102130705328.png" alt="image-20221102130705328"></p><p>part2，两位数一组，考虑16进制</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102130830274.png" alt="image-20221102130830274"></p><p>考虑ascill，再次转码</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102130929480.png" alt="image-20221102130929480"></p><p>part3，一眼丁真，熟悉的猪圈密码</p><p><img src="/2022/11/03/ISCTF-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F/image-20221102131025459.png" alt="image-20221102131025459"></p><p>最后相加</p><p>ISCTF{BlueShark_SeemsS0_cute}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-蓝鲨密码</title>
+      <link href="/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/"/>
+      <url>/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p>下载附件，加上后缀.txt打开</p><p>注意到重复出现  ! . ?联想到Ook！解码</p><p>将蓝鲨替换成Ook，放入解码器</p><p><img src="/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/image-20221102215348684.png" alt="image-20221102215348684"></p><p>将明码丢入解码器</p><p><img src="/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/image-20221102215413031.png" alt="image-20221102215413031"></p><p>可见，BLUE和SHARK重复出现，且每组重复次数不一，联想到摩斯电码，分别替换成-.</p><p>丢入解码器</p><p><img src="/2022/11/03/ISCTF-%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81/image-20221102215432864.png" alt="image-20221102215432864"></p><p>获得flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-磁盘管理大师</title>
+      <link href="/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/"/>
+      <url>/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/</url>
+      
+        <content type="html"><![CDATA[<p>解压后<img src="/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/image-20221102220032912.png" alt="image-20221102220032912"></p><p>拖入binwalk分离</p><p><img src="/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/image-20221102220128522.png" alt="image-20221102220128522"></p><p>使用Stegsolve<img src="/2022/11/03/ISCTF-%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88/image-20221102220213850.png" alt="image-20221102220213850"></p><p>出现flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>迷宫问题</title>
+      <link href="/2022/11/02/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/"/>
+      <url>/2022/11/02/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">start</span>(<span class="params">li</span>):</span><br><span class="line">    Start=li[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> Start!=<span class="string">&quot;S&quot;</span>:</span><br><span class="line">        i+=<span class="number">1</span></span><br><span class="line">        Start = li[i][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> [i,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">walk</span>(<span class="params">li,x,y</span>):</span><br><span class="line">    <span class="keyword">if</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;s&quot;</span>,[x+<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;d&quot;</span>,[x,y+<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">if</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;w&quot;</span>,[x-<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;a&quot;</span>,[x,y-<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">mig</span>):</span><br><span class="line">    li=[]</span><br><span class="line">    a=mig</span><br><span class="line">    a=a.replace(<span class="string">&quot;#&quot;</span>,<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    temp=-<span class="number">2</span></span><br><span class="line">    temp1=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> temp1!=-<span class="number">1</span>:</span><br><span class="line">        temp1=a.find(<span class="string">&quot;\n&quot;</span>,temp1+<span class="number">1</span>)</span><br><span class="line">        li.append(a[temp+<span class="number">2</span>:temp1].split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">        temp=temp1</span><br><span class="line">    data=[]</span><br><span class="line">    步骤=<span class="string">&quot;&quot;</span></span><br><span class="line">    data=[start(li)]</span><br><span class="line">    x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">    y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">while</span> li[x][y]!=<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        go=walk(li,data[-<span class="number">1</span>][<span class="number">0</span>],data[-<span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">if</span> go !=<span class="literal">False</span>:</span><br><span class="line">            data.append(go[<span class="number">1</span>])</span><br><span class="line">            步骤+=go[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">            data=data[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">            步骤=步骤[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">        x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">        y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span>(步骤)</span><br></pre></td></tr></table></figure><p>mig&#x3D;<img src="/2022/11/02/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/image-20221102161900469.png" alt="image-20221102161900469"><br>main(mig)</p><hr><p>原理：</p><p>walk函数：在当前的位置向下右上左的顺序走，若没有墙则返回方向(<code>w``s``a``d</code>)以及下一个位置的行列，若出现墙则返回<code>False</code></p><p>main函数：使用一个data变量记录之前走过的位置以及当前位置，若walk返回成功数据，则data变量加入返回的位置;若walk失败，则data&#x3D;data[0,-1]，及返回上一次的位置。</p><p><code>若走到下一次的位置，当前位置需要标记为墙或者其他！否则可以会出现来回走的情况</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 迷宫 </tag>
+            
+            <tag> 脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-一个misc手会不懂web吗</title>
+      <link href="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/"/>
+      <url>/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/</url>
+      
+        <content type="html"><![CDATA[<p>过滤http.request.method&#x3D;&#x3D;POST</p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234545558.png" alt="image-20221027234545558"></p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234553808.png" alt="image-20221027234553808"></p><p>flag在flag和flag1表格中</p><p>导出后写脚本</p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234717736.png" alt="image-20221027234717736"></p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234740859.png" alt="image-20221027234740859"></p><p><img src="/2022/11/02/ISCTF-%E4%B8%80%E4%B8%AAmisc%E6%89%8B%E4%BC%9A%E4%B8%8D%E6%87%82web%E5%90%97/image-20221027234745166.png" alt="image-20221027234745166"></p><p>得出</p><p>ITCTF{srl<code>!#is</code>vfry&#96;fasy~!!,</p><p>稍微修饰后</p><p>ISCTF{sql_is_very_easy}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-小蓝鲨藏哪了呢</title>
+      <link href="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/"/>
+      <url>/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/</url>
+      
+        <content type="html"><![CDATA[<p>下载文件后，发现是连续解压</p><p><img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183210035.png" alt="image-20221031183210035"></p><p>写脚本</p><p><img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183226289.png" alt="image-20221031183226289"></p><p><img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183251732.png" alt="image-20221031183251732"></p><p>010查看后无关键信息</p><p>用Stegsolve查看有无隐写<img src="/2022/11/02/ISCTF-%E5%B0%8F%E8%93%9D%E9%B2%A8%E8%97%8F%E5%93%AA%E4%BA%86%E5%91%A2/image-20221031183354866.png" alt="image-20221031183354866"></p><p>lsb隐写</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-手残党福音</title>
+      <link href="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/"/>
+      <url>/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183132146.png" alt="image-20221027183132146"></p><p>发现开始游戏后有save存档</p><p><img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183301615.png" alt="image-20221027183301615"></p><p>到下一关后<img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183322986.png" alt="image-20221027183322986"></p><p>每四个进行替换，发现09，33是关卡记录</p><p>递加修改关卡当修改为47时出现结局关卡<img src="/2022/11/02/ISCTF-%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E9%9F%B3/image-20221027183545549.png" alt="image-20221027183545549"></p><p>获取flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-两层编码</title>
+      <link href="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/"/>
+      <url>/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003617854.png" alt="image-20221028003617854"></p><p>爆破sha256</p><p>写代码</p><p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003639379.png" alt="image-20221028003639379"></p><p>循环暴力破解</p><p>得出结果<img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003700527.png" alt="image-20221028003700527"></p><p>K3BQ</p><p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003739958.png" alt="image-20221028003739958">判断为base64编码,要求四秒内输入key，写代码</p><p><img src="/2022/11/02/ISCTF-%E4%B8%A4%E5%B1%82%E7%BC%96%E7%A0%81/image-20221028003801455.png" alt="image-20221028003801455"></p><p>快速获取key后输入，得出flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-坤坤的csgo邀请</title>
+      <link href="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/"/>
+      <url>/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/</url>
+      
+        <content type="html"><![CDATA[<p>下载软件先查壳<img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205212466.png" alt="image-20221027205212466"></p><p>先用upx静态脱壳工具脱壳</p><p><img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205237890.png" alt="image-20221027205237890"></p><p>脱壳后拖入x64dbg</p><p><img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205319614.png" alt="image-20221027205319614"></p><p>看见你打球像cxk</p><p><img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205345133.png" alt="image-20221027205345133"></p><p>断点后来到该处</p><p>发现关键跳，把它nop掉<img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205404314.png" alt="image-20221027205404314"></p><p>F8走下<img src="/2022/11/02/ISCTF-%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7/image-20221027205548198.png" alt="image-20221027205548198"></p><p>出现flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-可爱的emoji</title>
+      <link href="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/"/>
+      <url>/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/</url>
+      
+        <content type="html"><![CDATA[<p>下载附件，压缩包加压需要密码</p><p>根据提示</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031173733076-16672285714621.png" alt="image-20221031173733076"></p><p>判断其爆破类型为掩码爆破，输入掩码KEY?????</p><p>获得解压密码</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031173849894.png" alt="image-20221031173849894"></p><p>压缩包内txt含有一堆emoji表情，数量不多，猜测可能是某种编码，上网搜索到emoji-aes</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031174045396.png" alt="image-20221031174045396"></p><p>发现解码需要一个KEY，联系解压时的KEYIS”AES”，推测这里的KEY应该是AES,初试解码失败，尝试修改Rotation中数字，发现a&#x3D;图案对应变换，逐个尝试，联系提示2中</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031174330738.png" alt="image-20221031174330738"></p><p>发现当输入数字9时，图案变为emoji中第一个图案，得出flag：</p><p><img src="/2022/11/02/ISCTF-%E5%8F%AF%E7%88%B1%E7%9A%84emoji/image-20221031174457698.png" alt="image-20221031174457698"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-开摆re</title>
+      <link href="/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/"/>
+      <url>/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/image-20221027235801147.png" alt="image-20221027235801147"></p><p>读题，就是简单的异或，写代码</p><p><img src="/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/image-20221027235956064.png" alt="image-20221027235956064"></p><p><img src="/2022/11/02/ISCTF-%E5%BC%80%E6%91%86re/image-20221028000003592.png" alt="image-20221028000003592"></p><p>结束</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-进来被骗！</title>
+      <link href="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/"/>
+      <url>/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/</url>
+      
+        <content type="html"><![CDATA[<p>解压后是一个ppt，打开是一张图片<img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120029584.png" alt="image-20221102120029584"></p><p>ppt是可以理解成一个压缩包，解压后发现音乐’你被骗了‘</p><p>拖入audacity中，发现奇怪音频</p><p><img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120128466.png" alt="image-20221102120128466"></p><p>类似于拨号音DTMF，网上搜索自动解码工具<img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120243276.png" alt="image-20221102120243276"></p><hr><p>解出一组数据</p><p>125 122 146 124 150 130 234 144 100 164 226 66 210 201 203 45 236</p><p>无法解出，怀疑进制转换，仅出现最大数6，应为七进制</p><p>转为10进制后</p><p>68 65 83 67 84 70 123 81 49 95 118 48 105 99 101 33 125</p><p>转换为ASCII码后<img src="/2022/11/02/ISCTF-%E8%BF%9B%E6%9D%A5%E8%A2%AB%E9%AA%97%EF%BC%81/image-20221102120435901.png" alt="image-20221102120435901"></p><p>得出flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-酱紫乱</title>
+      <link href="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/"/>
+      <url>/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101101012662.png" alt="image-20221101101012662"></p><p>打开后，每个文本一个字，写脚本整合</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">2896</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;./%d.txt&quot;</span>%i,encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        a+=f.read()</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;./temp.txt&quot;</span>,<span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(a)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101101056844.png" alt="image-20221101101056844"></p><p>得出一串乱码，拖入CyberChef，base解码</p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101100901462.png" alt="image-20221101100901462"></p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101101140482.png" alt="image-20221101101140482"></p><p>得到一串不知道什么的东西，各种解码都无效，且所要的数据均有出现,如<code>&#123;</code>,<code>&#125;</code></p><p>怀疑是按字出现的频率排序</p><hr><p>统计各数字出现的频率</p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101100917065.png" alt="image-20221101100917065"></p><p><img src="/2022/11/02/ISCTF-%E9%85%B1%E7%B4%AB%E4%B9%B1/image-20221101100922160.png" alt="image-20221101100922160"></p><p>思路正确，得出flag ISCTF{so_cLut73r}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-简单社工</title>
+      <link href="/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/"/>
+      <url>/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/image-20221031225918237.png" alt="image-20221031225918237"></p><p>下载附件，得到一张png图片和一个flag格式文本。打开图片，明显看出是一个地铁站。仔细观察，发现右下角有“高雄捷运”字样，结合挂着的“小港”站牌，直接打开地图搜索，锁定台湾高雄R红线。</p><p><img src="/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/image-20221031225928219.png" alt="image-20221031225928219"></p><p>继续观察，发现广告牌上反光显示4，5号口在同一方向。在地图上查找后发现只有巨蛋站的分布符合。</p><p>得出地址为台湾省高雄市左营区巨蛋站。按照格式取MD5大写得到flag</p><p><img src="/2022/11/02/ISCTF-%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5/image-20221031225940112.png" alt="image-20221031225940112"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-捕风的魔女</title>
+      <link href="/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/"/>
+      <url>/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/</url>
+      
+        <content type="html"><![CDATA[<p>下载附件得到两张对半开的flag加密文字。</p><p>第一张经过搜索可知是魔女之旅中的文字，根据对照表翻译得到flag前半段：ISCTF{VLIXCBXZDZLSFXRX</p><p><img src="/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/image-20221031230057569.png" alt="image-20221031230057569"></p><p>第二张图片搜索后可知是原神中的字体，根据对照表翻译得出flag后半段:IUBWWZXDFFOXMGJL}</p><p><img src="/2022/11/02/ISCTF-%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3/image-20221031230105896.png" alt="image-20221031230105896"></p><p>两段合并得完整的flag：ISCTF{VLIXCBXZDZLSFXRXIUBWWZXDFFOXMGJL}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-SigninReverse</title>
+      <link href="/2022/11/02/ISCTF-SigninReverse/"/>
+      <url>/2022/11/02/ISCTF-SigninReverse/</url>
+      
+        <content type="html"><![CDATA[<p>用ida64打开task.exe</p><p><img src="/2022/11/02/ISCTF-SigninReverse/image-20221027105613833.png" alt="image-20221027105613833"></p><p>选择main函数按TAB得出flag<img src="/2022/11/02/ISCTF-SigninReverse/image-20221027105640874.png" alt="image-20221027105640874"></p><p>爆破完毕</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-md5</title>
+      <link href="/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/"/>
+      <url>/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/</url>
+      
+        <content type="html"><![CDATA[<p>猜测是栅栏密码</p><p><img src="/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/image-20221027110841871.png" alt="image-20221027110841871"></p><p>写python爆破</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ashlib</span><br><span class="line"><span class="keyword">for</span> a1 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> a2 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">for</span> a3 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">            <span class="keyword">for</span> a4 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                <span class="keyword">for</span> a5 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                    <span class="keyword">for</span> a6 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                        <span class="keyword">for</span> a7 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">                            a=<span class="string">&quot;ISCTF&#123;md5_is_11%d%d1%d%d8%d%d%d&#125;&quot;</span>%(a1,a2,a3,a4,a5,a6,a7)</span><br><span class="line">                            <span class="keyword">if</span> hashlib.md5(a.encode(encoding=<span class="string">&#x27;UTF-8&#x27;</span>)).hexdigest() ==<span class="string">&quot;88875458bdd87af5dd2e3c750e534741&quot;</span>:</span><br><span class="line">                                <span class="built_in">print</span>(a)</span><br><span class="line">                                <span class="keyword">break</span></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/2022/11/02/ISCTF-%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86/image-20221102130932628.png" alt="image-20221102130932628"></p><p>解出flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-KFC疯狂星期四</title>
+      <link href="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/"/>
+      <url>/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/</url>
+      
+        <content type="html"><![CDATA[<p>解压后<img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000243962.png" alt="image-20221028000243962"></p><p>查看图片,无异常，但下面感觉显示只有一半<img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000347766.png" alt="image-20221028000347766"></p><p><img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000354799.png" alt="image-20221028000354799"></p><p>修改高度后出现密码YouVme-50</p><p>解压后的照片查看16进制<img src="/2022/11/02/ISCTF-KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B/image-20221028000440330.png" alt="image-20221028000440330"></p><p>末尾出现flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-fack web</title>
+      <link href="/2022/11/02/ISCTF-fack-web/"/>
+      <url>/2022/11/02/ISCTF-fack-web/</url>
+      
+        <content type="html"><![CDATA[<p>进入网页后自动跳转<img src="/2022/11/02/ISCTF-fack-web/image-20221027112441523.png" alt="image-20221027112441523"></p><p>使用burn抓取第一个页面</p><p><img src="/2022/11/02/ISCTF-fack-web/image-20221027112426607.png" alt="image-20221027112426607"></p><p>发现flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-ezbase</title>
+      <link href="/2022/11/02/ISCTF-ezbase/"/>
+      <url>/2022/11/02/ISCTF-ezbase/</url>
+      
+        <content type="html"><![CDATA[<p>用ida64查看代码</p><p><img src="/2022/11/02/ISCTF-ezbase/image-20221027210648195.png" alt="image-20221027210648195"></p><p>发现最后通过比较判断结果</p><p>用x64dbg打开后查询字符串win<img src="/2022/11/02/ISCTF-ezbase/image-20221027210738973.png" alt="image-20221027210738973"></p><p>发现关键跳，断点运行随便输入</p><p><img src="/2022/11/02/ISCTF-ezbase/image-20221027210858344.png" alt="image-20221027210858344"></p><p>右边直接发现对比的字符串，base64解密后出现答案</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-EASY-PHP02</title>
+      <link href="/2022/11/02/ISCTF-EASY-PHP02/"/>
+      <url>/2022/11/02/ISCTF-EASY-PHP02/</url>
+      
+        <content type="html"><![CDATA[<p>先根据代码写出网站</p><p><a href="http://120.79.18.34:20459/?NAME=jawiiki&amp;P0ST1=0&amp;P0ST2=s1836677006a">http://120.79.18.34:20459/?NAME=jawiiki&amp;P0ST1=0&amp;P0ST2=s1836677006a</a></p><p>代码中P0ST2的md5和P0ST1比较，且二者不能相等，有安全漏洞，“s1836677006a”的md5是0e开头，和P0ST1的0弱比较后是相同的。</p><p><img src="/2022/11/02/ISCTF-EASY-PHP02/image-20221027201107509.png" alt="image-20221027201107509"></p><p>成功</p><p>要求GET1不能出现数值且结果&#x3D;&#x3D;0，故输入a，比较时会自动转换成数字0.</p><p>GET2同理写成888a</p><p><img src="/2022/11/02/ISCTF-EASY-PHP02/image-20221027201234131.png" alt="image-20221027201234131"></p><p>得出答案<img src="/2022/11/02/ISCTF-EASY-PHP02/image-20221027201254316.png" alt="image-20221027201254316"></p><p>前者49534354467b66343235直接扔入cyberchef<img src="/2022/11/02/ISCTF-EASY-PHP02/image-20221027201421889.png" alt="image-20221027201421889"></p><p>自动识别获得前一半</p><p>后一半base64解码后是url编码</p><p><img src="/2022/11/02/ISCTF-EASY-PHP02/image-20221027201516822.png" alt="image-20221027201516822"></p><p>解码获得后一半</p><p>故获得全部flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-EASY-PHP01</title>
+      <link href="/2022/11/02/ISCTF-EASY-PHP01/"/>
+      <url>/2022/11/02/ISCTF-EASY-PHP01/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2022/11/02/ISCTF-EASY-PHP01/image-20221027113356873.png" alt="image-20221027113356873"></p><p>进入后传递hint参数</p><p><img src="/2022/11/02/ISCTF-EASY-PHP01/image-20221027113420036.png" alt="image-20221027113420036"></p><p>读取代码后要求给ISCTF传参，且等于整数的114514，而且又不能等于字符串的114514</p><p>故考点是弱比较</p><p>post数据ISCTF&#x3D;1144514a</p><p>得出答案</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-base64</title>
+      <link href="/2022/11/02/ISCTF-base64/"/>
+      <url>/2022/11/02/ISCTF-base64/</url>
+      
+        <content type="html"><![CDATA[<p>观察题目，按经验而已必然把加密顺序改变了，无法用正常的加密顺序解密</p><p>进入ida后<img src="/2022/11/02/ISCTF-base64/image-20221029111504450.png" alt="image-20221029111504450"></p><p>发现应该是加密顺序</p><p>查看主程序，发现加密后的字符串<img src="/2022/11/02/ISCTF-base64/image-20221029111534416.png" alt="image-20221029111534416"></p><p>解密后<img src="/2022/11/02/ISCTF-base64/image-20221029111603160.png" alt="image-20221029111603160"></p><p>得出flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISCTF-层层迷宫</title>
+      <link href="/2022/11/02/ISCTF-%E5%B1%82%E5%B1%82%E8%BF%B7%E5%AE%AB/"/>
+      <url>/2022/11/02/ISCTF-%E5%B1%82%E5%B1%82%E8%BF%B7%E5%AE%AB/</url>
+      
+        <content type="html"><![CDATA[<p>nc连接后<img src="/2022/11/02/ISCTF-%E5%B1%82%E5%B1%82%E8%BF%B7%E5%AE%AB/image-20221031224052044.png" alt="image-20221031224052044"></p><p>解迷宫</p><p>先手搓个脚本自动解迷宫</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">start</span>(<span class="params">li</span>):</span><br><span class="line">    Start=li[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> Start!=<span class="string">&quot;S&quot;</span>:</span><br><span class="line">        i+=<span class="number">1</span></span><br><span class="line">        Start = li[i][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> [i,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">walk</span>(<span class="params">li,x,y</span>):</span><br><span class="line">    <span class="keyword">if</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;s&quot;</span>,[x,y],[x+<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;d&quot;</span>,[x,y],[x,y+<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">if</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;w&quot;</span>,[x,y],[x-<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;a&quot;</span>,[x,y],[x,y-<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">mig</span>):</span><br><span class="line"></span><br><span class="line">    li=[]</span><br><span class="line">    a=mig</span><br><span class="line">    a=a.replace(<span class="string">&quot;#&quot;</span>,<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    temp=-<span class="number">2</span></span><br><span class="line">    temp1=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> temp1!=-<span class="number">1</span>:</span><br><span class="line">        temp1=a.find(<span class="string">&quot;\n&quot;</span>,temp1+<span class="number">1</span>)</span><br><span class="line">        li.append(a[temp+<span class="number">2</span>:temp1].split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">        temp=temp1</span><br><span class="line">    data=[]</span><br><span class="line">    步骤=<span class="string">&quot;&quot;</span></span><br><span class="line">    data=[start(li)]</span><br><span class="line">    x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">    y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">while</span> li[x][y]!=<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        go=walk(li,data[-<span class="number">1</span>][<span class="number">0</span>],data[-<span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">if</span> go !=<span class="literal">False</span>:</span><br><span class="line">            data.append(go[<span class="number">2</span>])</span><br><span class="line">            步骤+=go[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">            data=data[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">            步骤=步骤[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">        x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">        y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> 步骤</span><br></pre></td></tr></table></figure><p>输入main(“””<img src="/2022/11/02/ISCTF-%E5%B1%82%E5%B1%82%E8%BF%B7%E5%AE%AB/image-20221031224413422.png" alt="image-20221031224413422"></p><p>“””)</p><p>后自动解出步：dwwddwwwwddddddsd</p><p>再用pwntool库写自动nc连接输出</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">a = remote(<span class="string">&#x27;120.79.18.34&#x27;</span>,<span class="string">&#x27;20228&#x27;</span>)</span><br><span class="line">d=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">nc</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">global</span> d</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        </span><br><span class="line">        back=a.recvuntil(<span class="string">&quot;wasd&quot;</span>,timeout=<span class="number">10</span>).decode()</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(a.recvrepeat(timeout = <span class="number">5</span>).decode())</span><br><span class="line">    d=d + <span class="string">&quot;/n/n&quot;</span> + back</span><br><span class="line">    </span><br><span class="line">    q=back.find(<span class="string">&quot;#&quot;</span>)</span><br><span class="line">    p=back.rfind(<span class="string">&quot;#&quot;</span>)</span><br><span class="line">    z=back[q:p]</span><br><span class="line">    z=z.replace(<span class="string">&quot;[92m E[0m&quot;</span>,<span class="string">&quot; E&quot;</span>)</span><br><span class="line">    z=z.replace(<span class="string">&quot;[91m S[0m&quot;</span>,<span class="string">&quot; S&quot;</span>)</span><br><span class="line">    a.sendline(<span class="built_in">bytes</span>(main(z),encoding=<span class="string">&quot;utf-8&quot;</span>))</span><br></pre></td></tr></table></figure><p>连一起后的代码为</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">start</span>(<span class="params">li</span>):</span><br><span class="line">    Start=li[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> Start!=<span class="string">&quot;S&quot;</span>:</span><br><span class="line">        i+=<span class="number">1</span></span><br><span class="line">        Start = li[i][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> [i,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">walk</span>(<span class="params">li,x,y</span>):</span><br><span class="line">    <span class="keyword">if</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x+<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;s&quot;</span>,[x,y],[x+<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y+<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;d&quot;</span>,[x,y],[x,y+<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">if</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x-<span class="number">1</span>][y]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;w&quot;</span>,[x,y],[x-<span class="number">1</span>,y]]</span><br><span class="line">    <span class="keyword">if</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;0&quot;</span> <span class="keyword">or</span> li[x][y-<span class="number">1</span>]==<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;2&quot;</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&quot;a&quot;</span>,[x,y],[x,y-<span class="number">1</span>]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">mig</span>):</span><br><span class="line"></span><br><span class="line">    li=[]</span><br><span class="line">    a=mig</span><br><span class="line">    a=a.replace(<span class="string">&quot;#&quot;</span>,<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    temp=-<span class="number">2</span></span><br><span class="line">    temp1=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> temp1!=-<span class="number">1</span>:</span><br><span class="line">        temp1=a.find(<span class="string">&quot;\n&quot;</span>,temp1+<span class="number">1</span>)</span><br><span class="line">        li.append(a[temp+<span class="number">2</span>:temp1].split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">        temp=temp1</span><br><span class="line">    data=[]</span><br><span class="line">    步骤=<span class="string">&quot;&quot;</span></span><br><span class="line">    data=[start(li)]</span><br><span class="line">    x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">    y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">while</span> li[x][y]!=<span class="string">&quot;E&quot;</span>:</span><br><span class="line">        go=walk(li,data[-<span class="number">1</span>][<span class="number">0</span>],data[-<span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">if</span> go !=<span class="literal">False</span>:</span><br><span class="line">            data.append(go[<span class="number">2</span>])</span><br><span class="line">            步骤+=go[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            li[x][y]=<span class="string">&quot;1&quot;</span></span><br><span class="line">            data=data[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">            步骤=步骤[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">        x=data[-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">        y=data[-<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> 步骤</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">a = remote(<span class="string">&#x27;120.79.18.34&#x27;</span>,<span class="string">&#x27;20228&#x27;</span>)</span><br><span class="line">d=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">nc</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">global</span> d</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        </span><br><span class="line">        back=a.recvuntil(<span class="string">&quot;wasd&quot;</span>,timeout=<span class="number">10</span>).decode()</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(a.recvrepeat(timeout = <span class="number">5</span>).decode())</span><br><span class="line">    d=d + <span class="string">&quot;/n/n&quot;</span> + back</span><br><span class="line">    </span><br><span class="line">    q=back.find(<span class="string">&quot;#&quot;</span>)</span><br><span class="line">    p=back.rfind(<span class="string">&quot;#&quot;</span>)</span><br><span class="line">    z=back[q:p]</span><br><span class="line">    z=z.replace(<span class="string">&quot;[92m E[0m&quot;</span>,<span class="string">&quot; E&quot;</span>)</span><br><span class="line">    z=z.replace(<span class="string">&quot;[91m S[0m&quot;</span>,<span class="string">&quot; S&quot;</span>)</span><br><span class="line">    a.sendline(<span class="built_in">bytes</span>(main(z),encoding=<span class="string">&quot;utf-8&quot;</span>))</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    nc(a)</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>运行后</p><p><img src="/2022/11/02/ISCTF-%E5%B1%82%E5%B1%82%E8%BF%B7%E5%AE%AB/image-20221031225100917.png" alt="image-20221031225100917"></p><p>在循环了251次后成功拿到flag</p><p>ISCTF{7f597371-9be1-4b6c-8741-ea8a4146afdd}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ISCTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> 迷宫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[NSSCTF]easy C</title>
+      <link href="/2022/09/30/%5BNSSCTF%5Deasy%20C/"/>
+      <url>/2022/09/30/%5BNSSCTF%5Deasy%20C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="NSSCTF-easy-C"><a href="#NSSCTF-easy-C" class="headerlink" title="[NSSCTF]easy C"></a>[NSSCTF]easy C</h1><p>下载文件后打开</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span> a[]=<span class="string">&quot;wwwwwww&quot;</span>;</span><br><span class="line">    <span class="type">char</span> b[]=<span class="string">&quot;d`vxbQd&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//try to find out the flag</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input flag:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot; %s&quot;</span>,&amp;a);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">strlen</span>(a)!=<span class="number">7</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;NoNoNo\n&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</span><br><span class="line">        a[i]++;</span><br><span class="line">        a[i]=a[i]^<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(a,b))&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;good!\n&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;NoNoNo\n&quot;</span>);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//flag 记得包上 NSSCTF&#123;&#125; 再提交!!!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h2 id="分析第一段"><a href="#分析第一段" class="headerlink" title="分析第一段"></a>分析第一段</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> a[]=<span class="string">&quot;wwwwwww&quot;</span>;</span><br><span class="line">    <span class="type">char</span> b[]=<span class="string">&quot;d`vxbQd&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//try to find out the flag</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input flag:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot; %s&quot;</span>,&amp;a);</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strlen</span>(a)!=<span class="number">7</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;NoNoNo\n&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><ul><li>定义a,b,并给予数值</li><li>键入a数值</li><li>判断a字符串长度，若长度不是7，则结束</li></ul><h2 id="分析第二段"><a href="#分析第二段" class="headerlink" title="分析第二段"></a>分析第二段</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</span><br><span class="line">        a[i]++;</span><br><span class="line">        a[i]=a[i]^<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">strcmp</span>(a,b))&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;good!\n&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;NoNoNo\n&quot;</span>);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure><p>此为算法核心</p><ol><li>将a中每一个字符ascii加1后与<code>2</code>异或</li><li>如果a,b相同则输出good</li></ol><p>可见我们仅需将b文本反向操作：即将b中每一个字符与<code>2</code>异或 后 ascii减1</p><p><em>原理:将A文本异或两次后可获得原文本A</em></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">char</span> b[]=<span class="string">&quot;d`vxbQd&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</span><br><span class="line">        b[i]=b[i]^<span class="number">2</span>;</span><br><span class="line">        b[i]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(b);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>写出后运行</p><p>成功输出<code>easy_Re</code></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> NSSCTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo主题美化-其一</title>
+      <link href="/2022/09/09/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96-%E5%85%B6%E4%B8%80/"/>
+      <url>/2022/09/09/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96-%E5%85%B6%E4%B8%80/</url>
+      
+        <content type="html"><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p><img src="https://pic.imgdb.cn/item/631b053316f2c2beb1a3d06f.png" alt="如图"><br>如图所见,看见butterfly主题的纯蓝色背景配图片实在太丑了,所以采取一些措施美化它  </p><hr><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ol><li>在该页面F12调出控制台后找到相关元素class<br><img src="https://pic.imgdb.cn/item/631b068416f2c2beb1a53454.png" alt="图片"></li><li>改变<code>background-color</code>参数后可直接观察到背景颜色发现改变,并且记录下参数及该元素class名称<code>not-home-page</code>  </li><li>修改文件<code>hexo\themes\butterfly\source\css\index.styl</code>,在其最后添加上  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.not-home-page</span><br><span class="line">  background-color: <span class="comment">#4994f500!important</span></span><br></pre></td></tr></table></figure>保存后即可发现背景改变</li></ol><hr><h1 id="效果及衍生方法"><a href="#效果及衍生方法" class="headerlink" title="效果及衍生方法"></a>效果及衍生方法</h1><p><img src="https://pic.imgdb.cn/item/631b095916f2c2beb1a80ce3.png" alt="图片"><br>同理箭头所指部分颜色也可使用相同方法修改</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown初学习</title>
+      <link href="/2022/09/08/Markdown%E5%88%9D%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2022/09/08/Markdown%E5%88%9D%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="文字的奥义"><a href="#文字的奥义" class="headerlink" title="文字的奥义"></a><em>文字的奥义</em></h1><p><code># </code>可用于设置标题<br><code>*文字*</code>可用来设置文字的样式<br>使用<code>~~文字~~</code>可出现划线<del>abc</del><br>使用<code>&lt;u&gt;文字&lt;/u&gt;</code>可出现下划线<u>abc</u>  </p><p>在独立一行中连用三个<code>*</code>可创建分割栏</p><hr><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><ul><li>用<code>* </code>文字作出列表<br>于下一行输入两个空格后可成为子内容</li></ul><ol><li>输入<code>1. </code>后出现列表<br>  abc  </li><li>无内容</li></ol><hr><h1 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h1><blockquote><ul><li>使用<code>&gt; </code>可唤出区块  <blockquote><p>连用两次<code>&gt; </code>唤出子区块  </p><blockquote><p>abc</p></blockquote></blockquote></li><li>在区块中可用<code>* </code>分点，更加美观</li></ul></blockquote><h2 id="亦或是在列表中使用区块"><a href="#亦或是在列表中使用区块" class="headerlink" title="亦或是在列表中使用区块"></a>亦或是在列表中使用区块</h2><ul><li>列表  <blockquote><p>点1<br>点2</p></blockquote></li></ul><hr><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>开头输入换行键后呈现代码样式  </p><pre><code>import abc  print(&quot;abbd&quot;)  </code></pre><p><code>使用``将文字包裹起来后样式</code>  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用````bash  xxxx```后可呈现该样式</span><br></pre></td></tr></table></figure><hr><h1 id="其余"><a href="#其余" class="headerlink" title="其余"></a>其余</h1><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a href="http://www.baidu.com/">百度</a><code>[链接名称](链接地址)</code><br><a href="http://www.baidu.com/">http:www.baidu.com</a>或是<code>&lt;链接&gt;</code>  </p><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><code>![alt 属性文本](图片地址)</code><img src="https://p7.itc.cn/q_70/images03/20211212/ce0333a5b8b24df6996ff1b5367c4a00.jpeg" alt="中国地图"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
