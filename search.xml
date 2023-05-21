@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo主题美化-其一</title>
+    <url>/posts/d3db4a31/</url>
+    <content><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/d3db4a31/1-16846533273481.png" alt="1"><br>如图所见,看见butterfly主题的纯蓝色背景配图片实在太丑了,所以采取一些措施美化它</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/d3db4a31/2-16846533273482.png" alt="2"></p>
+<hr>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ol>
+<li><p>在该页面F12调出控制台后找到相关元素class</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/d3db4a31/2.png" alt="2"></p>
+<p>改变<code>background-color</code>参数后可直接观察到背景颜色发现改变,并且记录下参数及该元素class名称<code>not-home-page</code></p>
+</li>
+<li><p>修改文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo\themes\butterfly\source\css\index.styl</span><br></pre></td></tr></table></figure>
+
+<p>,在其最后添加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">BASH</span><br><span class="line">.not-home-page</span><br><span class="line">  background-color: #4994f500!important</span><br></pre></td></tr></table></figure>
+
+<p>保存后即可发现背景改变</p>
+</li>
+</ol>
+<hr>
+<h1 id="效果及衍生方法"><a href="#效果及衍生方法" class="headerlink" title="效果及衍生方法"></a>效果及衍生方法</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/d3db4a31/3.png" alt="3"></p>
+<p>同理箭头所指部分颜色也可使用相同方法修改</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Markdown初学习</title>
     <url>/posts/65ded02b/</url>
     <content><![CDATA[<h1 id="文字的奥义"><a href="#文字的奥义" class="headerlink" title="文字的奥义"></a><em>文字的奥义</em></h1><p><code># </code>可用于设置标题<br><code>*文字*</code>可用来设置文字的样式<br>使用<code>~~文字~~</code>可出现划线<del>abc</del><br>使用<code>&lt;u&gt;文字&lt;/u&gt;</code>可出现下划线abc</p>
@@ -52,29 +77,5 @@
         <tag>CSAAA</tag>
         <tag>A</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>hexo主题美化-其一</title>
-    <url>/posts/d3db4a31/</url>
-    <content><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/d3db4a31/1.png" alt="1">](<a href="https://pic.imgdb.cn/item/631b053316f2c2beb1a3d06f.png">https://pic.imgdb.cn/item/631b053316f2c2beb1a3d06f.png</a>)<br>如图所见,看见butterfly主题的纯蓝色背景配图片实在太丑了,所以采取一些措施美化它</p>
-<hr>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ol>
-<li><p>在该页面F12调出控制台后找到相关元素class</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/d3db4a31/2.png" alt="2"></p>
-<p>改变<code>background-color</code>参数后可直接观察到背景颜色发现改变,并且记录下参数及该元素class名称<code>not-home-page</code></p>
-</li>
-<li><p>修改文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo\themes\butterfly\source\css\index.styl</span><br></pre></td></tr></table></figure>
-
-<p>,在其最后添加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">BASH</span><br><span class="line">.not-home-page</span><br><span class="line">  background-color: #4994f500!important</span><br></pre></td></tr></table></figure>
-
-<p>保存后即可发现背景改变</p>
-</li>
-</ol>
-<hr>
-<h1 id="效果及衍生方法"><a href="#效果及衍生方法" class="headerlink" title="效果及衍生方法"></a>效果及衍生方法</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/d3db4a31/3.png" alt="3"></p>
-<p>同理箭头所指部分颜色也可使用相同方法修改</p>
-]]></content>
   </entry>
 </search>
