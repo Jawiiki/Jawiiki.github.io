@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>手机背屏 URI Route 测试页（3D 修复 + 双摄像头竖向排列）</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #eeeeee;
+      color: #222;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+    }
+
+    .wrapper {
+      width: min(976px, 100%);
+      margin: 0 auto;
+    }
+
+    .title {
+      margin-bottom: 14px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    /*
+     * 模拟背屏：
+     * 内部逻辑分辨率固定为 976 x 596。
+     * 浏览器窗口较小时，通过 CSS 自动缩放显示。
+     */
+    .back-screen {
+      position: relative;
+      width: 976px;
+      height: 596px;
+      max-width: 100%;
+      aspect-ratio: 976 / 596;
+      overflow: hidden;
+      border-radius: var(--screen-radius);
+      background: #111;
+      box-shadow:
+        inset 0 0 0 4px #666,
+        0 8px 28px rgba(0, 0, 0, 0.25);
+      isolation: isolate;
+      /* ===== 屏幕参数 ===== */
+      --screen-radius: 100px;   /* 背屏圆角，改这里即可 */
+
+      /* ===== 摄像头参数：改这里即可 ===== */
+      --cam-size: 225px;   /* 每个镜头的直径（两个一样大） */
+      --cam-x: 35px;      /* 镜头左边缘距背屏左边的距离 */
+      --cam-y: 45px;      /* 上面镜头的上边缘距背屏顶部的距离 */
+      --cam-gap: 65px;    /* 两个镜头之间的净间距 */
+    }
+
+    /*
+     * 真正承载被 uriroute_load() 加载网页的区域。
+     * 强制提升为 GPU 合成层，避免 WebGL 被降级。
+     */
+    .web-page {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+      z-index: 1;
+
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+
+    /*
+     * 摄像头遮挡（两个共用的样式）。
+     * 位置与大小由 .back-screen 上的 CSS 变量控制。
+     */
+    .camera {
+      position: absolute;
+      left: var(--cam-x);
+      width: var(--cam-size);
+      height: var(--cam-size);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #4e5963 0 5%, #182027 8% 22%, #050709 44% 68%, #000 69%);
+      border: 2px solid #252a2e;
+      box-shadow:
+        0 0 0 7px rgba(0, 0, 0, 0.28),
+        0 4px 12px rgba(0, 0, 0, 0.45);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    /* 上面镜头：直接使用 --cam-y */
+    .camera.top {
+      top: var(--cam-y);
+    }
+
+    /* 下面镜头：= 上面镜头 top + 直径 + 间距，自动跟随大小与间距 */
+    .camera.bottom {
+      top: calc(var(--cam-y) + var(--cam-size) + var(--cam-gap));
+    }
+
+    /* 镜头中心高光：百分比定位，镜头放大缩小时自动跟随 */
+    .camera::after {
+      content: "";
+      position: absolute;
+      top: 22%;
+      left: 22%;
+      width: 12%;
+      height: 12%;
+      min-width: 8px;
+      min-height: 8px;
+      border-radius: 50%;
+      background: rgba(185, 220, 255, 0.35);
+      filter: blur(1px);
+    }
+
+    /* 黑色遮罩：uriroute_setlight() 修改这里的 opacity */
+    .light-mask {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      opacity: 0;
+      z-index: 3;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .controls {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .control {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .control label {
+      font-weight: 700;
+    }
+
+    .control input {
+      width: 100%;
+      min-width: 0;
+      padding: 10px 12px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      font: inherit;
+      background: #fff;
+    }
+
+    /* ===== 文件选择行 ===== */
+    .file-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .btn {
+      flex: 0 0 auto;
+      padding: 10px 16px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      background: #fff;
+      font: inherit;
+      color: #222;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover:not(:disabled) { background: #f2f2f2; }
+    .btn:active:not(:disabled) { background: #e8e8e8; }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .btn.ghost {
+      color: #555;
+      border-style: dashed;
+    }
+
+    .file-info {
+      flex: 1 1 160px;
+      min-width: 0;
+      font-size: 13px;
+      color: #555;
+      word-break: break-all;
+    }
+
+    .file-info.active { color: #15803d; font-weight: 700; }
+
+    .hint {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #f8f8f8;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .status {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #555;
+      min-height: 20px;
+    }
+
+    .status.warn { color: #b45309; }
+    .status.err  { color: #b91c1c; }
+
+    @media (max-width: 760px) {
+      body { padding: 12px; }
+
+      .control {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title">小米17ProMax背屏页面模拟</div>
+
+    <!-- 模拟 976 × 596 的手机背屏 -->
+    <div class="back-screen" id="backScreen">
+      <iframe
+        id="webPage"
+        class="web-page"
+        title="URI Route Web Page"
+      ></iframe>
+
+      <!-- 黑色亮度遮罩，位于网页上方 -->
+      <div id="lightMask" class="light-mask"></div>
+
+      <!-- 两个竖向排列的摄像头，大小相同 -->
+      <div class="camera top"></div>
+      <div class="camera bottom"></div>
+    </div>
+
+    <div class="controls">
+      <div class="control">
+        <label for="pickBtn">本地网页文件：</label>
+        <div class="file-row">
+          <button type="button" id="pickBtn" class="btn">选择本地网页文件</button>
+          <button type="button" id="stopBtn" class="btn ghost" disabled>停止监视</button>
+          <span id="fileInfo" class="file-info">未选择文件</span>
+        </div>
+        <!-- 兜底用的文件选择框（不支持 File System Access API 时使用） -->
+        <input
+          id="fileInput"
+          type="file"
+          accept=".html,.htm,.xhtml,.txt,text/html,text/plain"
+          hidden
+        />
+      </div>
+
+      <div class="control">
+        <label for="dataInput">JSON 数据：</label>
+        <input
+          id="dataInput"
+          type="text"
+          placeholder='例如：{"name":"Jawiiki","id":"123"}'
+        />
+      </div>
+
+      <!-- ===== 新增：生成 UriRoute 脚本 / 导出 html 文件 ===== -->
+      <div class="control">
+        <label for="genScriptBtn">UriRoute 工具：</label>
+        <div class="file-row">
+          <button type="button" id="genScriptBtn" class="btn">生成UriRoute脚本</button>
+          <button type="button" id="exportHtmlBtn" class="btn">导出html文件</button>
+        </div>
+      </div>
+
+      <div id="scriptBox" style="display:none;">
+        <textarea
+          id="scriptOutput"
+          readonly
+          wrap="off"
+          spellcheck="false"
+          style="
+            display:block;
+            width:100%;
+            height:560px;
+            padding:14px;
+            border:1px solid #bbb;
+            border-radius:8px;
+            background:#fff;
+            color:#222;
+            font-family:Consolas,Menlo,monospace;
+            font-size:13px;
+            line-height:1.55;
+            white-space:pre;
+            overflow:auto;
+            resize:vertical;
+          "
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="hint">
+      选择本地网页文件后，页面会立即加载该文件，并每 5 秒检查一次文件是否被修改；
+      一旦检测到内容变化，就自动重新调用 uriroute_load() 刷新背屏内容。<br>
+      uriroute_setlight(n) 约定 n 为 0～100，表示黑色遮罩透明度百分比：
+      0 = 全黑，100 = 透明。<br>
+      在页面的script标签中添加下面函数。插件每秒自动调用该钩子函数并传递uriroute.add添加的参数<br>
+      function onRouteDataUpdate(data) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("author").textContent = data.author;<br>
+      }
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+
+  <script>
+    /* ================= 状态工具 ================= */
+    const statusEl = document.getElementById("status");
+
+    function setStatus(text, level) {
+      statusEl.textContent = text;
+      statusEl.className = "status" + (level ? " " + level : "");
+    }
+    /* ================= 数据缓存 ================= */
+    // 当前由 uriroute_setdata() 保存的 JSON 对象。
+    let routeData = {};
+
+    // 当前背屏页面内容的 Base64（供“生成UriRoute脚本”/“导出html文件”使用）
+    let currentPageBase64 = "";
+
+    /* ================= Base64 <-> UTF-8 ================= */
+    /**
+     * Base64 -> UTF-8 字符串。
+     * 例如：
+     * PGh0bWw+PGJvZHk+SGVsbG88L2JvZHk+PC9odG1sPg==
+     * -> <html><body>UriRoute背屏模拟</body></html>
+     */
+    function base64ToUtf8(base64) {
+      // 兼容 URL-safe 变体、去空白、补 padding
+      let b64 = String(base64)
+        .trim()
+        .replace(/\s+/g, "")
+        .replace(/-/g, "+")
+        .replace(/_/g, "/");
+      while (b64.length % 4) b64 += "=";
+
+      const binary = atob(b64);
+      const bytes = Uint8Array.from(binary, ch => ch.charCodeAt(0));
+      return new TextDecoder("utf-8").decode(bytes);
+    }
+
+    /**
+     * UTF-8 字符串 -> Base64。
+     * 分块处理，避免大文件时 apply 参数过多导致栈溢出。
+     */
+    function utf8ToBase64(str) {
+      const bytes = new TextEncoder().encode(String(str));
+      const CHUNK = 0x8000;
+      let binary = "";
+      for (let i = 0; i < bytes.length; i += CHUNK) {
+        binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+      }
+      return btoa(binary);
+    }
+
+    /* ================= 对外接口 ================= */
+
+    /**
+     * uriroute_load(string)
+     * string 是 Base64 编码后的完整网页文本。
+     * 解码后直接通过 iframe.srcdoc 渲染。
+     * 不再使用 document.open/write/close，主页面永不自毁。
+     */
+    window.uriroute_load = function (sInput) {
+      try {
+        const htmlText = String(sInput);
+        currentPageBase64 = utf8ToBase64(htmlText);
+        document.getElementById("webPage").srcdoc = htmlText;
+        // 顺便汇报 WebGL 状态，方便定位问题
+      } catch (err) {
+        setStatus("uriroute_load：Base64 解码失败 — " + err.message, "err");
+      }
+    };
+
+    /**
+     * uriroute_setdata(string)
+     * string 必须是 JSON 文本；多次调用会直接替换旧变量。
+     * 题目约定 key/value 都是 string。
+     */
+    window.uriroute_setdata = function (jsonText) {
+      try {
+        const parsed = JSON.parse(String(jsonText));
+
+        if (!parsed || Array.isArray(parsed) || typeof parsed !== "object") {
+          throw new Error("JSON 顶层必须是对象。");
+        }
+
+        for (const [key, value] of Object.entries(parsed)) {
+          if (typeof key !== "string" || typeof value !== "string") {
+            throw new Error("JSON 的 key、value 必须全部是 string。");
+          }
+        }
+
+        routeData = parsed; // 替换，而不是追加。
+        const win = document.getElementById("webPage").contentWindow;
+        if (win && typeof win.onRouteDataUpdate === "function") {
+          try {
+            win.onRouteDataUpdate(routeData);
+          } catch (e) {
+            console.warn("子页面 onRouteDataUpdate 执行出错：", e);
+          }
+        }
+        setStatus("uriroute_setdata：数据已替换，共 " + Object.keys(routeData).length + " 项。");
+      } catch (err) {
+        setStatus("uriroute_setdata：JSON 解析失败 — " + err.message, "err");
+      }
+    };
+
+    /**
+     * uriroute_get(string)
+     * 按 key 查找当前 JSON 数据，返回对应 value。
+     * 找不到时返回 null。
+     */
+    window.uriroute_get = function (key) {
+      const k = String(key);
+      return Object.prototype.hasOwnProperty.call(routeData, k)
+        ? routeData[k]
+        : null;
+    };
+
+    /**
+     * uriroute_setlight(int)
+     * 控制最上面的黑色遮罩透明度。
+     * 0～100 按百分比处理；0～1 的小数按 0～1 直接处理。
+     */
+    window.uriroute_setlight = function (value) {
+      let v = Number(value);
+      if (!Number.isFinite(v)) v = 100;
+      let ratio =  v / 100;
+      ratio = Math.max(0, Math.min(1, ratio));
+      // 100 -> 不遮罩（透明），0 -> 全黑
+      const opacity = 1 - ratio;
+      document.getElementById("lightMask").style.opacity = String(opacity);
+      setStatus("uriroute_setlight：" + Math.round(ratio * 100) + "%");
+    };
+
+    /* ================= 本地文件选择 + 5 秒轮询自动重载 ================= */
+
+    const POLL_INTERVAL = 5000; // 每 5 秒检查一次
+
+    const pickBtn  = document.getElementById("pickBtn");
+    const stopBtn  = document.getElementById("stopBtn");
+    const fileInfo = document.getElementById("fileInfo");
+    const fileInput = document.getElementById("fileInput");
+
+    let fileHandle   = null;   // File System Access API 的句柄（可重复读取最新内容）
+    let fallbackFile = null;   // 兜底：<input type="file"> 选中的 File 对象
+    let lastText     = null;   // 上一次加载的文件文本，用于比对是否修改
+    let pollTimer    = null;   // setInterval 句柄
+    let pollBusy     = false;  // 防止上一次轮询还没结束又发起新的
+
+    /** 取当前要监视的文件对象（每次调用都尽量拿到磁盘上的最新快照） */
+    async function getCurrentFile() {
+      if (fileHandle) return await fileHandle.getFile();
+      return fallbackFile;
+    }
+
+    /** 立即加载一次文件内容 */
+    async function loadSelectedFile() {
+      try {
+        const file = await getCurrentFile();
+        if (!file) return;
+
+        const text = await file.text();
+        lastText = text;
+
+        window.uriroute_load(text);
+        setStatus(
+          "已加载本地文件：" + file.name +
+          "（每 " + POLL_INTERVAL / 1000 + " 秒检查一次更新）"
+        );
+      } catch (err) {
+        setStatus("读取本地文件失败：" + err.message, "err");
+      }
+    }
+
+    /** 启动轮询 */
+    function startPolling() {
+      stopPolling();
+      pollTimer = setInterval(pollFile, POLL_INTERVAL);
+      stopBtn.disabled = false;
+    }
+
+    /** 停止轮询 */
+    function stopPolling() {
+      if (pollTimer !== null) {
+        clearInterval(pollTimer);
+        pollTimer = null;
+      }
+      stopBtn.disabled = true;
+    }
+
+    /** 轮询：内容变化则重新加载 */
+    async function pollFile() {
+      if (pollBusy) return;
+      pollBusy = true;
+
+      try {
+        const file = await getCurrentFile();
+        if (!file) return;
+
+        const text = await file.text();
+
+        if (text !== lastText) {
+          lastText = text;
+          window.uriroute_load(text);
+          if (genScriptActivated) {
+            document.getElementById("genScriptBtn").click();
+          }
+          setStatus("检测到文件已修改，已自动重新加载：" + file.name);
+        }
+      } catch (err) {
+        // 文件被删除 / 权限失效等，停止轮询并提示重新选择
+        stopPolling();
+        fileInfo.classList.remove("active");
+        setStatus("监视文件失败：" + err.message + "，请重新选择文件。", "err");
+      } finally {
+        pollBusy = false;
+      }
+    }
+
+    /** 用 File System Access API 选文件 */
+    async function pickWithFileSystemAccess() {
+      const handles = await window.showOpenFilePicker({
+        multiple: false,
+        excludeAcceptAllOption: false,
+        types: [
+          {
+            description: "网页文件",
+            accept: {
+              "text/html": [".html", ".htm", ".xhtml"],
+              "text/plain": [".txt", ".md"]
+            }
+          }
+        ]
+      });
+
+      fileHandle = handles[0];
+      fallbackFile = null;
+
+      fileInfo.textContent = fileHandle.name + "（实时监视中）";
+      fileInfo.classList.add("active");
+
+      lastText = null;
+      await loadSelectedFile();
+      startPolling();
+    }
+
+    /** 兜底：普通 <input type="file"> */
+    fileInput.addEventListener("change", async () => {
+      const f = fileInput.files && fileInput.files[0];
+      if (!f) return;
+
+      fileHandle = null;
+      fallbackFile = f;
+
+      fileInfo.textContent = f.name + "（兼容模式）";
+      fileInfo.classList.add("active");
+
+      lastText = null;
+      await loadSelectedFile();
+      startPolling();
+    });
+
+    /** 点击“选择本地网页文件” */
+    pickBtn.addEventListener("click", async () => {
+      genScriptActivated = false;              // ← 新增：重置为未手动点击状态
+      scriptBox.style.display = "none";        // ← 新增：隐藏脚本输出框
+      if (typeof window.showOpenFilePicker === "function") {
+        try {
+          await pickWithFileSystemAccess();
+          return;
+        } catch (err) {
+          if (err && err.name === "AbortError") return; // 用户取消选择
+          // 其他失败（例如权限策略限制）则走兜底方案
+          setStatus("文件系统接口不可用，改用兼容方式选择文件。", "warn");
+        }
+      }
+      fileInput.value = "";
+      fileInput.click();
+    });
+
+    /** 点击“停止监视” */
+    stopBtn.addEventListener("click", () => {
+      stopPolling();
+      fileInfo.classList.remove("active");
+      fileInfo.textContent = (fileHandle || fallbackFile)
+        ? ((fileHandle ? fileHandle.name : fallbackFile.name) + "（已停止监视）")
+        : "未选择文件";
+      setStatus("已停止监视文件更新。");
+    });
+
+    /* ================= JSON 数据输入框联动 ================= */
+    document.getElementById("dataInput").addEventListener("input", function () {
+      if (this.value.trim() !== "") {
+        window.uriroute_setdata(this.value);
+      }
+    });
+
+    /* ================= 生成 UriRoute 脚本 ================= */
+    let genScriptActivated = false;
+    const genScriptBtn = document.getElementById("genScriptBtn");
+    const scriptBox     = document.getElementById("scriptBox");
+    const scriptOutput  = document.getElementById("scriptOutput");
+
+    genScriptBtn.addEventListener("click", () => {
+      genScriptActivated = true; 
+      // uriroute_html 的 value = 当前背屏页面内容的 Base64 文本
+      const htmlBase64 = currentPageBase64 || "";
+      const script =
+`function run() {
+    const init=uriRoute.getValue('init');
+    if(init==1){
+        //初始化参数
+        uriRoute.add('uriroute_html',uriroute_html);
+        //息屏时亮度
+        uriRoute.add('uriroute_aoelight','30');
+    }
+    else{
+        //这里添加的参数页面都能获取到
+        uriRoute.add('author','jawiiki'); 
+    }  
+}
+const uriroute_html = "${htmlBase64}";
+`;
+
+      scriptOutput.value = script;
+      scriptBox.style.display = "block";
+      setStatus(
+        htmlBase64
+          ? "已生成 UriRoute 脚本（uriroute_html 长度 " + htmlBase64.length + " 字符）。"
+          : "已生成 UriRoute 脚本（当前没有页面内容，uriroute_html 为空）。",
+        htmlBase64 ? "" : "warn"
+      );
+    });
+
+    /* ================= 导出 html 文件 ================= */
+    /*
+     * 导出的“背屏通用模块”模板：
+     * 其中 iframe 的 srcdoc 会被替换为当前已加载网页文件的完整内容。
+     * 占位符 __SRCDOC__ 用 split/join 替换，避免 $ 被当成替换模式。
+     */
+    const EXPORT_TEMPLATE = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>背屏通用模块</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+    }
+    #webPage {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
+    #lightMask {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    id="webPage"
+    class="web-page"
+    title="URI Route Web Page"
+    srcdoc='__SRCDOC__'
+  ></iframe>
+
+  <div id="lightMask" class="light-mask"></div>
+
+  <script>
+    let routeData = {};
+    window.uriroute_load = function (base64String) {
+      try {
+        window.maml?.putInt("is_inited", 1);
+      } catch (e) {
+        console.warn("回写 is_inited 失败：", e);
+      }
+    };
+
+    window.uriroute_setdata = function (payload) {
+      try {
+        // 兼容两种调用：MAML 直接传对象字面量（推荐），或传 JSON 字符串
+        const parsed = typeof payload === "string" ? JSON.parse(payload) : payload;
+        if (!parsed || Array.isArray(parsed) || typeof parsed !== "object") {
+          return; // 空数据 / 未就绪，直接忽略
+        }
+        routeData = parsed;
+        const win = document.getElementById("webPage").contentWindow;
+        if (win && typeof win.onRouteDataUpdate === "function") {
+          try {
+            win.onRouteDataUpdate(routeData);
+          } catch (e) {
+            console.warn("子页面 onRouteDataUpdate 执行出错：", e);
+          }
+        }
+      } catch (err) {
+        console.error("uriroute_setdata 失败:", err);
+      }
+    };
+
+    window.uriroute_get = function (key) {
+      const k = String(key);
+      return Object.prototype.hasOwnProperty.call(routeData, k) ? routeData[k] : null;
+    };
+
+    window.uriroute_setlight = function (value) {
+      let v = Number(value);
+      if (!Number.isFinite(v)) v = 100;
+      // 0~1 视为比例，0~100 视为百分比
+      let ratio = v / 100;
+      ratio = Math.max(0, Math.min(1, ratio));
+      // 100 -> 不遮罩（透明），0 -> 全黑
+      const opacity = 1 - ratio;
+      document.getElementById("lightMask").style.opacity = String(opacity);
+    };
+  <\/script>
+</body>
+</html>
+`;
+
+    /** 把页面 HTML 转义后放进 srcdoc='...' 单引号属性中 */
+    function escapeForSrcdocAttribute(html) {
+      return String(html)
+        .replace(/&/g, "&amp;")
+        .replace(/'/g, "&#39;");
+    }
+
+    /** 生成最终要保存的完整 html 文本 */
+    function buildExportHtml(pageHtml) {
+      return EXPORT_TEMPLATE
+        .split("__SRCDOC__")
+        .join(escapeForSrcdocAttribute(pageHtml));
+    }
+
+    const exportHtmlBtn = document.getElementById("exportHtmlBtn");
+
+    exportHtmlBtn.addEventListener("click", async () => {
+      let pageHtml = "";
+      try {
+        pageHtml = base64ToUtf8(currentPageBase64 || "");
+      } catch (err) {
+        setStatus("导出失败：当前页面内容无法解析 — " + err.message, "err");
+        return;
+      }
+
+      if (!pageHtml) {
+        setStatus("没有可导出的页面内容，请先选择本地网页文件。", "warn");
+        return;
+      }
+
+      const output = buildExportHtml(pageHtml);
+      const fileName = "uriroute-web.html";
+
+      // 优先使用“另存为”对话框，让用户自己选保存路径
+      if (typeof window.showSaveFilePicker === "function") {
+        try {
+          const handle = await window.showSaveFilePicker({
+            suggestedName: fileName,
+            types: [
+              {
+                description: "HTML 文件",
+                accept: { "text/html": [".html", ".htm"] }
+              }
+            ]
+          });
+          const writable = await handle.createWritable();
+          await writable.write(new Blob([output], { type: "text/html;charset=utf-8" }));
+          await writable.close();
+          setStatus("已导出 html 文件：" + handle.name);
+          return;
+        } catch (err) {
+          if (err && err.name === "AbortError") return; // 用户取消保存
+          setStatus("保存对话框不可用，改用兼容方式下载。", "warn");
+        }
+      }
+
+      // 兜底：普通下载（浏览器默认下载目录）
+      try {
+        const blob = new Blob([output], { type: "text/html;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        setStatus("已导出 html 文件（兼容模式下载）：" + fileName);
+      } catch (err) {
+        setStatus("导出失败：" + err.message, "err");
+      }
+    });
+
+    /* ================= 默认页面 ================= */
+    /*
+     * 页面打开时给一个最简单的默认网页，方便直接看到效果。
+     * 这不是接口的一部分。
+     */
+    const defaultHtml = `
+      <html>
+        <body style="margin:0;display:flex;align-items:center;justify-content:center;height:100%;font-family:Arial,sans-serif;background:#fff;">
+          <div style="text-align:center;padding:16px;">
+            <h1 style="margin:0 0 8px;">UriRoute背屏模拟</h1>
+            <p style="margin:0;color:#666;">点击“选择本地网页文件”，即可加载并实时监视该文件</p>
+            <p style="margin:12px 0 0;color:#999;font-size:12px;">
+              文件被修改后，页面会在 5 秒内自动重新加载。
+            </p>
+          </div>
+        </body>
+      </html>
+    `;
+    currentPageBase64 = utf8ToBase64(defaultHtml);
+    document.getElementById("webPage").srcdoc = defaultHtml;
+  </script>
+</body>
+</html>
